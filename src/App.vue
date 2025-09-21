@@ -11,6 +11,8 @@
       <router-view />
     </main>
 
-    <footer class="p-4 text-sm text-gray-500">© {{ new Date().getFullYear() }} My App</footer>
+    <footer class="p-4 text-sm text-gray-500">
+      © {{ new Date().getFullYear() }} Sound Matters by The Fusion Initiative
+    </footer>
   </div>
 </template>
