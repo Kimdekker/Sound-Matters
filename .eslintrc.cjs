@@ -2,12 +2,7 @@
 module.exports = {
   root: true,
   env: { node: true, browser: true, es2021: true },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended', // TS rules
-    'plugin:vue/vue3-recommended', // Vue 3 rules
-    'plugin:prettier/recommended', // Enables eslint-plugin-prettier + displays Prettier errors as ESLint
-  ],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:vue/vue3-recommended', 'plugin:prettier/recommended', 'plugin:storybook/recommended'],
   plugins: ['vue', '@typescript-eslint', 'prettier'],
   parser: 'vue-eslint-parser',
   parserOptions: {
