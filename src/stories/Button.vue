@@ -1,50 +1,51 @@
 <template>
-  <button type="button" :class="classes" @click="onClick" :style="style">{{ label }}</button>
+  <button
+    type="button"
+    :class="buttonClasses"
+    @click="onClick"
+    :style="customStyle"
+  >
+    {{ label }}
+  </button>
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue';
-
-import './button.css';
+import { computed } from 'vue'
 
 const props = withDefaults(
   defineProps<{
-    /**
-     * The label of the button
-     */
-    label: string;
-    /**
-     * primary or secondary button
-     */
-    primary?: boolean;
-    /**
-     * size of the button
-     */
-    size?: 'small' | 'medium' | 'large';
-    /**
-     * background color of the button
-     */
-    backgroundColor?: string;
+    label: string
+    primary?: boolean
+    size?: 'small' | 'medium' | 'large'
   }>(),
   { primary: false }
-);
+)
 
 const emit = defineEmits<{
-  (e: 'click', id: number): void;
-}>();
+  (e: 'click', id: number): void
+}>()
 
-const classes = computed(() => ({
-  'storybook-button': true,
-  'storybook-button--primary': props.primary,
-  'storybook-button--secondary': !props.primary,
-  [`storybook-button--${props.size || 'medium'}`]: true,
-}));
+// Tailwind classes based on props
+const buttonClasses = computed(() => {
+  const base = 'rounded font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2'
 
-const style = computed(() => ({
-  backgroundColor: props.backgroundColor,
-}));
+  // Primary / Secondary
+  const variant = props.primary
+    ? 'bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-500'
+    : 'bg-gray-300 text-black hover:bg-gray-400 focus:ring-gray-300'
+
+  // Size
+  const size = {
+    small: 'px-3 py-1 text-sm',
+    medium: 'px-4 py-2 text-base',
+    large: 'px-6 py-3 text-lg',
+  }[props.size || 'medium']
+
+  return [base, variant, size].join(' ')
+})
+
 
 const onClick = () => {
-  emit('click', 1);
-};
+  emit('click', 1)
+}
 </script>
