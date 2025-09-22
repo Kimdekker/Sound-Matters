@@ -3,7 +3,6 @@
     type="button"
     :class="buttonClasses"
     @click="onClick"
-    :style="customStyle"
   >
     {{ label }}
   </button>

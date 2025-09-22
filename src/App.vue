@@ -1,14 +1,15 @@
 <script setup lang="ts">
-  // Import global components or composables here if needed
-  import HelloWorld from './components/HelloWorld.vue';
+  import Button from './components/Button.vue'
+
 </script>
 
 <template>
-  <main class="flex-1 w-full max-w-4xl p-4">
-    <HelloWorld msg="You did it!" />
+  <main>
 
-    <!-- Drop your components here -->
-    <router-view />
+    <Button label="Button" primary size="medium" />
+    <Button label="Secondary button" size="medium" />
+
+
   </main>
 
   <footer class="p-4 text-sm text-gray-500">
