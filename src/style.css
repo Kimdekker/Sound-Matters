@@ -1,10 +1,8 @@
-@import 'tailwindcss';
-@import 'prettier';
-@import 'prettier-plugin-tailwindcss';
-
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import 'prettier';
+@import 'prettier-plugin-tailwindcss';
 
 @tailwind base;
 @tailwind components;
