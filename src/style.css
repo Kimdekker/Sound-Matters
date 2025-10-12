@@ -1,7 +1,116 @@
+/**************/
+/* TAILWIND CONFIG */
+/************/
 @import "tailwindcss";
-
 @tailwind utilities;
 
-html, body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+@theme {
+  --color-yellow: #FFF600;
+  --color-grey: #838286;
+  --color-black: #1E1E1E;
+  --color-white: #FFFEEE;
+  --color-shadow: #B6D300;
 }
+
+
+/**************/
+/* CSS REMEDY */
+/**************/
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* //////////////FONTS//////////////////// */
+
+@font-face {
+  font-family: 'Albert Sans';
+  font-style: normal;
+  src: url('../src/assets/fonts/AlbertSans.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Albert Sans';
+    font-style: italic;
+  src: url('../src/assets/fonts/AlbertSans-Italic.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'Sometype Mono';
+    font-style: normal;
+  src: url('../src/assets/fonts/SometypeMono.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Sometype Mono';
+    font-style: italic;
+  src: url('../src/assets/fonts/SometypeMono-Italic.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'Sixtyfour';
+    font-style: evenly;
+  src: url('../src/assets/fonts/Sixtyofour.ttf') format('truetype');
+}
+
+
+body {
+  font-family: 'Albert Sans', sans-serif;
+  background: url('../src/assets/images/CRT-bg.jpg') center center fixed;
+  background-size: cover;
+  background-color: black;
+}
+
+
+h1, h2, h3, h4, h5, h6, p, span {
+  font-family: 'Albert Sans', sans-serif;
+  color: var(--color-yellow);
+}
+
+h1 {
+  font-family: 'Sixtyfour', sans-serif;
+  font-weight: 600;
+  font-size: 6.875rem;
+  text-shadow: var(--color-shadow) .05em 0 20px;;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.875rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: .875rem;
+}
+
+span {
+  font-size: 1rem;
+  font-family: 'Sometype Mono', sans-serif;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.1rem;
+  color: var(--color-white);
+}
+
+
