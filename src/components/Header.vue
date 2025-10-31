@@ -1,6 +1,11 @@
 <script setup lang="ts">
   import Typography from '../components/Typography.vue'
 
+
+  import { ref } from 'vue'
+
+  const sliderValue = ref(3) // default position
+
 </script>
 
 <template class="flex flex-col">
@@ -30,6 +35,20 @@
     <Typography as="span" class="order-1 text-center">
         the Fusion Initiative
     </Typography>
+    
+
+      <div class="q-pa-lg">
+    <q-slider
+      v-model="sliderValue"
+      color="orange"
+      thumb-color="purple"
+      markers
+      :min="0"
+      :max="6"
+      vertical
+      class="slider-with-s"
+    />
+  </div>
 
 </template>
 
@@ -42,6 +61,17 @@
     text-shadow: var(--color-shadow) .05em 0 20px;;
     text-transform: uppercase;
     display: inline;
+  }
+
+  .slider-with-s .q-slider__thumb::after {
+    content: 'S';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
   }
 
   @media (max-width: 768px) {
